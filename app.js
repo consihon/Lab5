@@ -15,7 +15,7 @@ function sum(a, b) { //eslint-disable-line
   var c= a+b;
   return([c,'The sum of '+a+' and '+b+' is '+c+'.']);
 }
-
+sum(1,2)[0];
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
@@ -111,15 +111,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var answer=multiply(1,multArr[0]);
+  var answer=multiply(1,multArr[0])[0];
   var numbers=multArr[0];
   for (var i=1; i<multArr.length;i++){
     answer=multiply(answer,multArr[i])[0];
     numbers=numbers+','+multArr[i];
   }
-  console.log([answer,'The numbers '+numbers+' have a product of 24.']);
-  console.log(numbers);
-  return ([answer,'The numbers '+numbers+' have a product of 24.']);
+  return ([answer,'The numbers '+numbers+' have a product of '+answer+'.']);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -147,10 +145,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    var answer=multiply(1,dynamicArray[0])[0];
+    var numbers=dynamicArray[0];
+    for (var i=1; i<dynamicArray.length;i++){
+      answer=multiply(answer,dynamicArray[i])[0];
+      numbers=numbers+','+dynamicArray[i];
+    }
+    return ([answer,'The numbers '+numbers+' have a product of '+answer+'.']);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
